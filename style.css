@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("D:\LearningCurve\New folder\static\purple_flower_petals_water_drops_hd_purple-1920x1080.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Login Page */
+.login-container {
+    width: 350px;
+    margin: 10% auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-container h1 {
+    color: purple;
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid purple;
+    border-radius: 5px;
+}
+
+.login-container button {
+    background: purple;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Dashboard */
+.dashboard-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+}
+
+.dashboard-container h1 {
+    color: purple;
+    text-align: center;
+}
+
+.options a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background: purple;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.email-card {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid purple;
+    border-radius: 5px;
+    background: white;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    background: purple;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
