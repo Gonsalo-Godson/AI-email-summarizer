@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background: url('{{ url_for('static', filename='purple_flower_petals_water_drops_hd_purple-1920x1080.jpg') }}') no-repeat center center fixed; background-size: cover;">
+    <div class="login-container">
+        <h1>AI Email Summarizer</h1>
+        <h3>by Gonsalo Godson</h3>
+        <form method="POST" action="{{ url_for('login') }}">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <!-- Export Guide Button -->
+        <a href="{{ url_for('static', filename='export_guide.pdf') }}" target="_blank" class="export-guide-btn">📄 How to Export Emails</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background: url('{{ url_for('static', filename='purple_flower_petals_water_drops_hd_purple-1920x1080.jpg') }}') no-repeat center center fixed; background-size: cover;">
+    <div class="dashboard-container">
+        <h1>Welcome, {{ email }}</h1>
+        <div class="options">
+            <a href="?fetch=ALL">📩 Fetch All Emails</a>
+            <a href="?fetch=UNSEEN">🔍 Fetch Unread Emails</a>
+        </div>
+
+        {% if emails %}
+            {% for email in emails %}
+                <div class="email-card">
+                    <h3>{{ email.sender }}</h3>
+                    <p><strong>Subject:</strong> {{ email.subject }}</p>
+                    <p><strong>Summary:</strong> {{ email.summary }}</p>
+                </div>
+            {% endfor %}
+
+            <div class="pagination">
+                {% if current_page > 1 %}
+                    <a href="?page={{ current_page - 1 }}&fetch={{ fetch_type }}">⬅ Previous</a>
+                {% endif %}
+                <span>Page {{ current_page }} of {{ total_pages }}</span>
+                {% if current_page < total_pages %}
+                    <a href="?page={{ current_page + 1 }}&fetch={{ fetch_type }}">Next ➡</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <p>No emails found or an error occurred.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
